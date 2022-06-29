@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog List</title>
+</head>
+<body>
+    <h3>Blog List</h3>
+    <a href="{% url 'create-blog' %}">Create Blog</a>
+{% for post in posts %}
+    <h4>{{ post.title }}</h4>
+<p>
+    {{ post.content }}
+</p>
+<h6>
+    Create at:
+</h6>
+{{ post.created_at }}
+{% endfor %}
+</body>
+</html>
